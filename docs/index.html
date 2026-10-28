@@ -2,16 +2,43 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>pagina1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis notas</title>
     <link rel="stylesheet" href="estilos.css" />
   </head>
   <body>
-    <h4>APLICACION DE NOTAS PERSONALES DEL USUARIO</h4>
-    <img src="img/descarga.jfif" />
-    <p>Ingrese el texto y presione el boton para procesar la solicitud.</p>
-    <input id="nota" placeholder="Nota" />
-    <button id="agregar">ok</button>
-    <ul id="lista"></ul>
+    <main class="tarjeta">
+      <img
+        src="img/descarga.jfif"
+        alt="Escritorio con cuaderno y laptop para tomar notas"
+      />
+      <h1>Mis notas</h1>
+      <p class="ayuda">Escribe una nota y elige su categoría.</p>
+
+      <form id="formulario">
+        <label for="nota">Escribe tu nota</label>
+        <input
+          id="nota"
+          type="text"
+          autocomplete="off"
+          placeholder="Ej: Entregar laboratorio 11"
+        />
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria">
+          <option>Estudio</option>
+          <option>Trabajo</option>
+          <option>Personal</option>
+        </select>
+
+        <button type="submit" id="agregar" class="boton-principal" disabled>
+          Agregar nota
+        </button>
+      </form>
+
+      <p id="mensaje" class="mensaje" role="status"></p>
+      <section id="lista" aria-label="Lista de notas"></section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
